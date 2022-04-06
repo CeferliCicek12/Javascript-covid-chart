@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Covid-19 Cases Chart of Country</title>
+</head>
+<body>
+<label for="sel1">Select Country:</label>
+<select id="countries">
+	<option value="Afghanistan">Afghanistan</option>
+	<option value="US">US</option>
+	<option value="Turkey">Turkey</option>
+	<option value="Yemen">Andorra</option>
+	<option value="Angola">Angola</option>
+    	<option value="Azerbaijan">Azerbaijan</option>
+	<option value="China">China</option>
+	<option value="Argentina">Argentina</option>
+	<option value="Australia">Australia</option>
+	<option value="Austria">Austria</option>
+
+
+</select>  
+<div id="result">
+
+</div>
+</body>  
+<script src="https://unpkg.com/covid-charts/index.js"></script>
+<script>
+
+    document.getElementById('countries').addEventListener('change',(e) => {
+
+        document.getElementById('result').innerHTML = ''
+
+         const chart = createChart(document.getElementById('result'), {
+    country: document.getElementById('countries').value,
+    width: 800,
+    height: 600
+  });
+    })
+</script>
+</body>
+</html>
